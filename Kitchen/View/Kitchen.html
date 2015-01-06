@@ -1,0 +1,32 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<?php
+    init();
+    require_once "../Model/IngredientsModel.php"
+    $ingredient;
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kitchen live view</title>
+   
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <h1 align="middle"> kitchen</h1> 
+    <div style="width:300px; height:120px; overflow:auto; border:solid 1px black;">
+    <ul>
+    <?php 
+   $ingredient = IngredientsModel::getIngredient();
+   foreach($ingredient as $ ing){
+   ?>
+      <li><?php echo $ingredient?></li>
+    <?php
+   }
+   ?>
+   </ul>
+        </div>
+    </body>
+</html>
