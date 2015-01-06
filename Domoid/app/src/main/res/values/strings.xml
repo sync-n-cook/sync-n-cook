@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Domotique</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="kitchen">Cuisine</string>
+    <string name="bedroom">Chambre</string>
+    <string name="livingroom">Salon</string>
+    <string name="bathroom">Salle de bain</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="recipe">Recette</string>
+
+</resources>
