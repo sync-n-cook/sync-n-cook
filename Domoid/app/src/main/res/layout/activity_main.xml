@@ -19,14 +19,18 @@
             android:text="@string/kitchen"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="@style/ThemeKitchen"
+            android:background="@drawable/syncncook_logo"
+            android:textAlignment="viewEnd" />
 
         <Button
             android:id="@+id/b_livingroom"
             android:text="@string/livingroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="@style/ThemeSalon" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,13 +45,15 @@
             android:text="@string/bedroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="@style/ThemeRoom" />
 
         <Button
             android:id="@+id/b_bathroom"
             android:text="@string/bathroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="@style/ThemeBathRoom" />
     </LinearLayout>
 </LinearLayout>
