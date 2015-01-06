@@ -11,5 +11,8 @@
     <string name="bathroom">Salle de bain</string>
     <string name="ingredients">Ingredients</string>
     <string name="recipe">Recette</string>
+    <string name="voletup">Ouvrir volets</string>
+    <string name="voletdown">Fermer volets</string>
+
 
 </resources>
