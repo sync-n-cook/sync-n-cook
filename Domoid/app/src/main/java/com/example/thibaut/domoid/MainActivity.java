@@ -42,6 +42,17 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(i);
             }
         });
+
+        ImageButton bParking=(ImageButton)findViewById(R.id.b_parking);
+        bParking.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View b) {
+
+                Intent parking = new Intent(b.getContext(), ActivitySalon.class);
+                startActivity(parking);
+            }
+        });
     }
 
     @Override

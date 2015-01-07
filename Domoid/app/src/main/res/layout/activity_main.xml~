@@ -66,7 +66,10 @@
     </LinearLayout>
 
     <LinearLayout
+<<<<<<< HEAD
+=======
         android:background="#FFFFFF"
+>>>>>>> a1a2795b5cfbb92f6ada87126edbc9ceb09bc18d
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
