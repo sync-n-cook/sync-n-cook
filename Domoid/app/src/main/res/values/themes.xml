@@ -3,13 +3,13 @@
     <color name="dark_green">#002000</color>
     <color name="yellow">#ffff00</color>
     <color name="white">#ffffff</color>
-    <color name="red">#ff0000</color>
-    <color name="blue">#32add6</color>
-    <color name="green">#00ff00</color>
+    <color name="red">#cc0000</color>
+    <color name="blue">#0099cc</color>
+    <color name="green">#669900</color>
 
     <style name="ThemeKitchen" parent="@android:style/Theme.Holo">
-        <item name="android:background">@color/red</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bath_room_buttons</item>
+        <!--<item name="android:textColor">@color/white</item>-->
     </style>
 
     <style name="ThemeBathRoom" parent="@android:style/Theme.Holo">
@@ -18,7 +18,7 @@
     </style>
 
     <style name="ThemeSalon" parent="@android:style/Theme.Holo">
-        <item name="android:background">@color/green</item>
+        <item name="android:src">@drawable/syncnrest_logo</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
