@@ -5,11 +5,11 @@ require_once "../utils/AccesBase.php";
  * and open the template in the editor.
  */
 
-class IngredientsModel{
+class RecetteModel{
     
     public static function getIngredient(){
         $sql = "SELECT ingredientNom, ingredientQuantite
-                FROM  ingredient
+                FROM  recette
                 ";
       $bdd = new AccesBase();
       $stmt = $bdd->getInstance();

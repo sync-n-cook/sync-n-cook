@@ -2,31 +2,81 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php
-    init();
-    require_once "../Model/IngredientsModel.php"
-    $ingredient;
-?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+    <?php
+    require_once "../Buisness/IngredientBuisness.php";
+    $ingredient = new IngredientBuisness();
+    ?>
         <title>Kitchen live view</title>
-   
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./Css/Kitchen.css" />
     </head>
     <body>
-    <h1 align="middle"> kitchen</h1> 
-    <div style="width:300px; height:120px; overflow:auto; border:solid 1px black;">
-    <ul>
-    <?php 
-   $ingredient = IngredientsModel::getIngredient();
-   foreach($ingredient as $ ing){
-   ?>
-      <li><?php echo $ingredient?></li>
-    <?php
-   }
-   ?>
-   </ul>
+    <div id="logo">
+        <img src="./assets/syncncook_logo.png" alt="Kitchen" style="width:300px;height:300px">
+    </div>
+    <h1 id="title">Kitchen</h1> 
+    <div id ="freezerState" title="FreezerState">
+        <h2 id="textFreezerState">Etat du frigérateur</h2>
+        <div id="arrondi" >
+            <h3 id="textIngredient">Ingrédients</h3>
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td>Quantité</td>
+                </tr>
+            
+      
+      <?php 
+  
+    list($ingredientName, $ingredientQuantity)  = $ingredient->getIngredientJson();
+   $ing =  array( $ingredientName, $ingredientQuantity);    
+    for($offset = 0; $offset < count($ingredientName); $offset++){
+       ?>
+            <tr>
+             <td><?php echo $ingredientName[$offset] ?></td>
+             <td><?php echo $ingredientQuantity[$offset] ?></td>
+            </tr>
+            <?php
+           }
+           ?>
+         
+           </table>
         </div>
+    </div>
+    
+    <div id ="recette" title="recette">
+    <h2 id="textRecette">Recette(s) disponible(s)</h2>
+    <div id="arrondi" >
+        <h3 id="textIngredient">Recette(s)</h3>
+        <table>
+            <tr>
+                <td>Nom</td>
+                <td>Quantité</td>
+            </tr>
+
+      
+      <?php 
+  
+    list($ingredientName, $ingredientQuantity)  = $ingredient->getIngredientJson();
+   $ing =  array( $ingredientName, $ingredientQuantity);    
+    for($offset = 0; $offset < count($ingredientName); $offset++){
+       ?>
+            <tr>
+             <td><?php echo $ingredientName[$offset] ?></td>
+             <td><?php echo $ingredientQuantity[$offset] ?></td>
+            </tr>
+            <?php
+           }
+           ?>
+         
+           </table>
+        </div>
+    </div>
+    
+    
     </body>
 </html>

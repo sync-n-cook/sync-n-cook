@@ -17,7 +17,7 @@ class SingletonBdd extends PDO{
    * @access private
    * @see PDO::__construct()
    */
-   private function __construct($path, $user, $pass)
+   public function __construct($path, $user, $pass)
    {
      parent::__construct($path, $user, $pass);
    }
