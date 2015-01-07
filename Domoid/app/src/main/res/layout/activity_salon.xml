@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="40dp"
-    android:background="@color/yellow">
+    android:background="@android:color/transparent">
 
     <ImageButton
         android:id="@+id/volet_up"
