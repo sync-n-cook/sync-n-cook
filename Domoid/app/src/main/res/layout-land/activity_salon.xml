@@ -9,6 +9,7 @@
         android:id="@+id/volet_up"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:scaleType="fitXY"
         android:layout_weight="1"
         android:src="@drawable/living_room_buttons"
         android:background="@drawable/syh_logo_app_up"/>

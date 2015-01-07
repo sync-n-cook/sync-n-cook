@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.example.thibaut.objects.Ingredient;
+import com.example.thibaut.objects.Recette;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -155,11 +156,7 @@ public class JSONHandler {
         return jArray;
     }
 
-    /**
-     * Create a list of Items from a JSONArray
-     * @param a the JSONArray
-     * @return the list
-     */
+
     public ArrayList<Ingredient> jsonToListIngredients(JSONArray a) {
         ArrayList<Ingredient> list = new ArrayList<Ingredient>();
         JSONObject j;
@@ -168,13 +165,30 @@ public class JSONHandler {
                 for(int i = 0; i < a.length(); i++) {
                     try {
                         j = a.getJSONObject(i);
-                        list.add(new Ingredient(j.getInt("ingredientId"), j.getString("ingredientNom"), j.getInt("ingredientCategorieId"), j.getInt("ingredientQuantite")));
+                        list.add(new Ingredient(j.getInt("ingredientId"), j.getInt("ingredientCategorieId"), j.getString("ingredientNom"),j.getInt("ingredientQuantite")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
         }
 
+        return list;
+    }
+
+    public ArrayList<Recette> jsonToListRecettes(JSONArray a) {
+        ArrayList<Recette> list = new ArrayList<Recette>();
+        JSONObject j;
+
+        if(a != null) {
+            for(int i = 0; i < a.length(); i++) {
+                try {
+                    j = a.getJSONObject(i);
+                    list.add(new Recette(j.getInt("recetteId"), j.getString("recetteNom"), j.getString("recetteDescription"),"toto"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return list;
     }
 

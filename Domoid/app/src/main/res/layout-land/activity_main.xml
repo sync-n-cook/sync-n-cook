@@ -8,12 +8,11 @@
     android:padding="5dp">
 
     <LinearLayout
-        android:background="#FFFFFF"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="3">
 
         <ImageButton
             android:id="@+id/b_kitchen"
@@ -35,16 +34,21 @@
             android:background="@drawable/syh_logo_app_canap"
             />
 
+        <Button
+            android:id="@+id/b_entrance"
+            android:text="@string/bedroom"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:background="#FFFFFF"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="3">
 
         <ImageButton
             android:id="@+id/b_bedroom"
@@ -64,5 +68,11 @@
             android:src="@drawable/bath_room_buttons"
             android:background="@drawable/syh_logo_app_bath"/>
 
+        <Button
+            android:id="@+id/b_stairs"
+            android:text="@string/bedroom"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>
