@@ -21,8 +21,8 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:src="@drawable/bath_room_buttons"
-            android:background="@drawable/syncncook_logo"
+            android:src="@drawable/kitchen_buttons"
+            android:background="@drawable/syh_logo_app_kitchen"
             />
 
         <ImageButton
@@ -31,8 +31,8 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:src="@drawable/bath_room_buttons"
-            android:background="@drawable/syncnrest_logo"
+            android:src="@drawable/living_room_buttons"
+            android:background="@drawable/syh_logo_app_canap"
             />
 
 
@@ -52,8 +52,8 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:src="@drawable/bath_room_buttons"
-            android:background="@drawable/syncnall_logo" />
+            android:src="@drawable/bedroom_buttons"
+            android:background="@drawable/syh_logo_app_all" />
 
         <ImageButton
             android:id="@+id/b_bathroom"
@@ -62,7 +62,7 @@
             android:layout_width="fill_parent"
             android:layout_weight="1"
             android:src="@drawable/bath_room_buttons"
-            android:background="@drawable/syncnbath_logo"/>
+            android:background="@drawable/syh_logo_app_bath"/>
 
     </LinearLayout>
 </LinearLayout>
