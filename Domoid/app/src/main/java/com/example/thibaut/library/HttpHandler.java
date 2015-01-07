@@ -1,14 +1,12 @@
 package com.example.thibaut.library;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import android.content.Context;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
+import com.example.thibaut.objects.Ingredient;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
 
 /**
  * Created by thibaut on 06/01/2015.
@@ -16,29 +14,30 @@ import java.io.UnsupportedEncodingException;
 public class HttpHandler {
 
 
-    public HttpHandler() {
+    private JSONHandler _jHandler;
+
+    private String _shutterUp = "http://192.168.43.249:8080/api?api_number=1";
+    private String _shutterDown = "http://192.168.43.249:8080/api?api_number=2";
+    private String _checkForIngredients = "http://192.168.214.220:8086/PI/webapi/ingredient/";
+
+    public HttpHandler(Context c) {
+        _jHandler = new JSONHandler(c);
     }
 
-    public void sendHttpRequest(String uri) {
+    public void handleShutters(boolean b) {
 
-        InputStream is = null;
-
-        /* Create the http request */
-        try {
-
-            /* create a GET request from the params */
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpGet httpGet = new HttpGet(uri);
-            HttpResponse httpResponse = httpClient.execute(httpGet);
-            HttpEntity httpEntity = httpResponse.getEntity();
-            is = httpEntity.getContent();
-
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (b) {
+            _jHandler.sendHttpRequest(_shutterUp);
+        } else {
+            _jHandler.sendHttpRequest(_shutterDown);
         }
     }
+
+    public ArrayList<Ingredient> getListIngredients() {
+        JSONArray array = _jHandler.getJSONFromServer(_checkForIngredients, null);
+        return _jHandler.jsonToListIngredients(array);
+
+    }
+
+
 }
