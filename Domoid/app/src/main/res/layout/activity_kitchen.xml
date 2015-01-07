@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/t_ingredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:text="@string/ingredients"
-        android:background="@drawable/layoutborder"/>
-
-    <Button
-        android:id="@+id/valid"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/validate"/>
-
-    <ListView
-        android:id="@+id/list_ingredients"
-        android:padding="10dp"
-        android:layout_below="@id/t_ingredients"
-        android:layout_above="@id/valid"
+    <RelativeLayout
+        android:id="@+id/layout_ingredient"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:choiceMode="multipleChoice"/>
+        android:layout_height="fill_parent">
 
+        <TextView
+            android:id="@+id/t_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="@string/ingredients"
+            android:background="@drawable/layoutborder"/>
+
+        <Button
+            android:id="@+id/valid"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/validate"/>
+
+        <ListView
+            android:id="@+id/list_ingredients"
+            android:padding="10dp"
+            android:layout_below="@id/t_ingredients"
+            android:layout_above="@id/valid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_recettes"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/t_recipe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:text="@string/recipe"
+            android:background="@drawable/layoutborder"/>
+
+        <ListView
+            android:id="@+id/list_recipe"
+            android:layout_below="@id/t_recipe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+     </RelativeLayout>
 
 
 </RelativeLayout>
