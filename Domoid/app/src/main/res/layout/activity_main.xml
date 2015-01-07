@@ -73,7 +73,7 @@
 
         <Button
             android:id="@+id/b_entrance"
-            android:text="@string/bedroom"
+            android:text="Entrée"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"/>

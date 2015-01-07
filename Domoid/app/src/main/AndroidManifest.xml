@@ -23,6 +23,8 @@
 
         <activity android:name=".ActivityKitchen"/>
         <activity android:name=".ActivitySalon"/>
+        <activity android:name=".ActivityEntrance"/>
+
 
     </application>
 
