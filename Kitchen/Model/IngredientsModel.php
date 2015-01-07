@@ -7,19 +7,21 @@ require_once "../utils/AccesBase.php";
 
 class IngredientsModel{
     
-    public function getIngredient(){
-        $sql = "SELECT
-                FROM
-                WHERE";
-      $stmt = AccesBase::getInstance();
-      $stmt = $mysqli->prepare("INSERT INTO CountryLanguage VALUES (?, ?, ?, ?)");
-      $stmt->bind_param('sssd', $code, $language, $official, $percent);
-      $stmt->close(); 
+    public static function getIngredient(){
+        $sql = "SELECT ingredientNom, ingredientQuantite
+                FROM  ingredient
+                ";
+      $bdd = new AccesBase();
+      $stmt = $bdd->getInstance();
+      $stmt->prepare($sql);
+      //$stmt->bind_param('sssd', $code, $language, $official, $percent);
       $stmt->execute();
-     
-      return array($ingredient);
+      $stmt->fetch();
+      $stmt->close(); 
+      return array($name,$quantity);
+      
     }
-    
+   
 }
 
 ?>

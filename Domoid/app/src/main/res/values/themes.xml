@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_green">#002000</color>
+    <color name="yellow">#FEF87F</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#cc0000</color>
+    <color name="blue">#0099cc</color>
+    <color name="green">#669900</color>
+    <color name="darkyellow">#fdf200</color>
+    <style name="ThemeKitchen" parent="@android:style/Theme.Holo">
+        <item name="android:background">@drawable/bath_room_buttons</item>
+        <!--<item name="android:textColor">@color/white</item>-->
+    </style>
+
+    <style name="ThemeBathRoom" parent="@android:style/Theme.Holo">
+        <item name="android:background">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ThemeSalon" parent="@android:style/Theme.Holo">
+        <item name="android:src">@drawable/living_room_buttons</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ThemeRoom" parent="@android:style/Theme.Holo">
+        <item name="android:background">@color/yellow</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

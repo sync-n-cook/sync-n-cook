@@ -7,48 +7,64 @@
     android:weightSum="6"
     android:padding="5dp">
 
+
     <LinearLayout
-        android:background="#0000FF"
+        android:background="#FFFFFF"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-        <Button
+        <ImageButton
             android:id="@+id/b_kitchen"
             android:text="@string/kitchen"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/kitchen_buttons"
+            android:background="@drawable/syh_logo_app_kitchen"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/b_livingroom"
             android:text="@string/livingroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/living_room_buttons"
+            android:background="@drawable/syh_logo_app_canap"
+            />
+
+
     </LinearLayout>
 
     <LinearLayout
-        android:background="#00FF00"
+        android:background="#FFFFFF"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-        <Button
+        <ImageButton
             android:id="@+id/b_bedroom"
             android:text="@string/bedroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/bedroom_buttons"
+            android:background="@drawable/syh_logo_app_all" />
 
-        <Button
+        <ImageButton
             android:id="@+id/b_bathroom"
             android:text="@string/bathroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/bath_room_buttons"
+            android:background="@drawable/syh_logo_app_bath"/>
+
     </LinearLayout>
 
     <LinearLayout

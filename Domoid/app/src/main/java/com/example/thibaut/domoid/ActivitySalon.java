@@ -1,10 +1,12 @@
 package com.example.thibaut.domoid;
 
 import android.app.Activity;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.thibaut.library.HttpHandler;
 
@@ -24,8 +26,8 @@ public class ActivitySalon extends Activity {
         _httpHandler = new HttpHandler(this);
 
 
-        Button up = (Button)findViewById(R.id.volet_up);
-        Button down = (Button)findViewById(R.id.volet_down);
+        ImageButton up = (ImageButton)findViewById(R.id.volet_up);
+        ImageButton down = (ImageButton)findViewById(R.id.volet_down);
 
         up.setOnClickListener(new View.OnClickListener() {
 
