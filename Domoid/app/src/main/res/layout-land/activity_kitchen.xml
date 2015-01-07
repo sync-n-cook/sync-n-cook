@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/fragment_ingredients"
-        android:name="com.siteduzero.android.dynamicui.CountryListFragment"
+        android:name="com.example.thibaut.domoid.IngredientFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
      <fragment
         android:id="@+id/fragment_recettes"
-        android:name="com.siteduzero.android.dynamicui.CountryDetailsFragment"
+        android:name="com.example.thibaut.domoid.RecetteFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3" />

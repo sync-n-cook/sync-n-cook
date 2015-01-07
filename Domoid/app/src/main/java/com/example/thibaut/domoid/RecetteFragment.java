@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 
 public class RecetteFragment extends Fragment {
 
-	@Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	 	View view = inflater.inflate(R.layout.fragment_recettes, container, false);
-	 	
-	 	
-	 	return view; }
+	 	return view;
+    }
 	
 }

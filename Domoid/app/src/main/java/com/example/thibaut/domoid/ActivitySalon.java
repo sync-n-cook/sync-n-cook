@@ -3,7 +3,6 @@ package com.example.thibaut.domoid;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,15 +14,14 @@ import com.example.thibaut.library.HttpHandler;
 public class ActivitySalon extends Activity {
 
     private HttpHandler _httpHandler;
-    final String uri_up = "http://192.168.43.249:8080/api?api_number=1";
-    final String uri_down = "http://192.168.43.249:8080/api?api_number=2";
+
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salon);
 
-        _httpHandler = new HttpHandler();
+        _httpHandler = new HttpHandler(this);
 
 
         Button up = (Button)findViewById(R.id.volet_up);
@@ -34,7 +32,7 @@ public class ActivitySalon extends Activity {
             @Override
             public void onClick(View b) {
                 CommandeVolet cv = new CommandeVolet();
-                cv.execute(uri_up);
+                cv.execute(true);
             }
         });
 
@@ -43,19 +41,18 @@ public class ActivitySalon extends Activity {
             @Override
             public void onClick(View b) {
                 CommandeVolet cv = new CommandeVolet();
-                cv.execute(uri_down);
+                cv.execute(false);
             }
         });
 
     }
 
 
-    private class CommandeVolet extends AsyncTask<String, Void, Void> {
+    private class CommandeVolet extends AsyncTask<Boolean, Void, Void> {
 
         @Override
-        protected Void doInBackground(String... uri) {
-            Log.d("TEST", uri[0]);
-            _httpHandler.sendHttpRequest(uri[0]);
+        protected Void doInBackground(Boolean... state) {
+            _httpHandler.handleShutters(state[0]);
             return null;
         }
 
