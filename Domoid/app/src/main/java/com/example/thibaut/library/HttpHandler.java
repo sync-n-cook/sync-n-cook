@@ -18,7 +18,7 @@ public class HttpHandler {
 
     private String _shutterUp = "http://192.168.43.249:8080/api?api_number=1";
     private String _shutterDown = "http://192.168.43.249:8080/api?api_number=2";
-    private String _checkForIngredients = "http://192.168.214.220:8086/PI/webapi/ingredient/";
+    private String _checkForIngredients = "http://192.168.43.158:8086/PI/webapi/ingredient/";
 
     public HttpHandler(Context c) {
         _jHandler = new JSONHandler(c);

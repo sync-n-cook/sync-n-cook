@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.thibaut.adapter.IngredientsAdapter;
@@ -30,24 +31,35 @@ public class IngredientFragment extends Fragment {
 
         _httpHandler = new HttpHandler(getActivity());
 
-        _lIngredients = null;
+        _lIngredients = new ArrayList<Ingredient>();
         _lv = (ListView)view.findViewById(R.id.list_ingredients);
 
         _ia = new IngredientsAdapter(getActivity(), _lIngredients);
         _lv.setAdapter(_ia);
 
+        _lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            }
+
+        });
+
+        ObtenirIngredients oi = new ObtenirIngredients();
+        oi.execute();
+
+
         return view;
     }
 
-    private class ObtenirIngredients extends AsyncTask<Void, Void, Void> {
+    private class ObtenirIngredients extends AsyncTask<Void, Void, ArrayList<Ingredient>> {
 
-        protected Void doInBackground(Void... args) {
-            _lIngredients = _httpHandler.getListIngredients();
-            return null;
+        protected ArrayList<Ingredient> doInBackground(Void... args) {
+            return _httpHandler.getListIngredients();
         }
 
-        private void onPostExecute() {
-            _ia.swapItems(_lIngredients);
+        protected void onPostExecute(ArrayList<Ingredient> list) {
+
+            _ia.swapItems(list);
         }
     }
 }
