@@ -3,20 +3,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="40dp">
+    android:padding="40dp"
+    android:background="@android:color/white">
 
-    <Button
+    <ImageButton
         android:id="@+id/volet_up"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/voletup"/>
+        android:src="@drawable/living_room_buttons"
+        android:background="@drawable/syncnhouse_sup"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/volet_down"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/voletdown"/>
+        android:src="@drawable/living_room_buttons"
+        android:background="@drawable/syncnhouse_sdown"/>
 
 </LinearLayout>

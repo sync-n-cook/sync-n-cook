@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button bKitchen = (Button)findViewById(R.id.b_kitchen);
+        ImageButton bKitchen = (ImageButton)findViewById(R.id.b_kitchen);
         bKitchen.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -29,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        Button bLivingroom = (Button)findViewById(R.id.b_livingroom);
+        ImageButton bLivingroom = (ImageButton)findViewById(R.id.b_livingroom);
         bLivingroom.setOnClickListener(new View.OnClickListener() {
 
             @Override
