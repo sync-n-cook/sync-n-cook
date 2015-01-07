@@ -46,7 +46,7 @@
         android:weightSum="2">
 
         <ImageButton
-            android:id="@+id/b_bedroom"
+            android:id="@+id/b_entrance"
             android:text="@string/bedroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -73,14 +73,8 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-<<<<<<< HEAD
-        <Button
-            android:id="@+id/b_entrance"
-            android:text="Entrée"
-=======
         <ImageButton
             android:id="@+id/b_parking"
->>>>>>> bc38f0d29ab72a469ad62c24c8449369cfbc8726
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
@@ -96,4 +90,5 @@
             android:src="@drawable/night_missing_mode_buttons"
             android:background="@drawable/syh_logo_app_moon"/>
     </LinearLayout>
+
 </LinearLayout>

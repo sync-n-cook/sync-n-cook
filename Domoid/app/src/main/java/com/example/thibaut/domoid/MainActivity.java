@@ -6,7 +6,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
@@ -43,24 +42,25 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-<<<<<<< HEAD
-        Button bEntrance = (Button)findViewById(R.id.b_entrance);
+        ImageButton bEntrance = (ImageButton)findViewById(R.id.b_entrance);
         bEntrance.setOnClickListener(new View.OnClickListener() {
-=======
+            @Override
+            public void onClick(View b) {
+                Intent i = new Intent(b.getContext(), ActivityEntrance.class);
+
+                startActivity(i);
+
+            }
+        });
         ImageButton bParking=(ImageButton)findViewById(R.id.b_parking);
         bParking.setOnClickListener(new View.OnClickListener() {
->>>>>>> bc38f0d29ab72a469ad62c24c8449369cfbc8726
 
             @Override
             public void onClick(View b) {
 
-<<<<<<< HEAD
-                Intent i = new Intent(b.getContext(), ActivityEntrance.class);
-                startActivity(i);
-=======
+
                 Intent parking = new Intent(b.getContext(), ActivitySalon.class);
                 startActivity(parking);
->>>>>>> bc38f0d29ab72a469ad62c24c8449369cfbc8726
             }
         });
     }
