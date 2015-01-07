@@ -18,7 +18,7 @@ and open the template in the editor.
     </head>
     <body>
     <div id="logo">
-        <img src="./assets/syncncook_logo.png" alt="Kitchen" style="width:300px;height:300px">
+        <a href="/Kitchen/View/main.php?kitchen">  <img src="./assets/syncncook_logo.png"  alt="Kitchen" style="width:300px;height:300px"></a>
     </div>
     <h1 id="title">Kitchen</h1> 
     <div id ="freezerState" title="FreezerState">
@@ -62,29 +62,54 @@ and open the template in the editor.
   
             
      
- 
+
       <?php 
     list($recetteName, $recetteDescription)  = $recette->RecetteJson();
-    $count = count($recetteName);
+    $count = count($recetteName);//on recupere le nombre total d'entrée
  
-    $offset = 0;
+    $offset = 0;//indice du tableau
         while( $count > 0){
        ?>
             <tr>
              <td><?php if(isset($recetteName[$offset]))echo $recetteName[$offset] ?></td>
-             <td><?php if(isset($recetteDescription[$offset])){echo $recetteDescription[$offset];$count--;} ?></td>
+             <td><?php if(isset($recetteDescription[$offset])){echo $recetteDescription[$offset];$count--;} ?></td><!-- si le tableau à l'indice offset est non nul on echo la valeur et décremente $count sinon on icrémente l'offset jusq'à $count=0 -->
             </tr>
             <?php
             $offset++;
         
        }
            ?>
-         
+        
            </table>
         </div>
     </div>
     
+  <div id ="recetteFav" title="recetteFav">
+    <h2 id="textRecette">Mes favoris</h2>
+    <div id="arrondi" >
+        <h3 id="textIngredient">Recette(s)</h3>
+        <table>
+            <tr>
+                <td>Nom</td>
+                <td>Déscription</td>
+            </tr>
 
+  
+
+      <?php 
+    list($recetteName, $recetteDescription)  = $recette->getRecetteFav();
+    for($offset = 0; $offset < count($recetteName); $offset++){
+       ?>
+            <tr>
+             <td><?php echo $recetteName[$offset] ?></td>
+             <td><?php echo $recetteDescription[$offset] ?></td>
+            </tr>
+            <?php
+            }
+           ?>
+           </table>
+        </div>
+    </div>
     
     </body>
 </html>
