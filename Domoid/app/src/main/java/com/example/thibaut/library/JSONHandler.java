@@ -69,7 +69,7 @@ public class JSONHandler {
         InputStream is = null;
 
     	/* test if the server is reachable */
-        if(!isServerReachable()) {
+        /*if(!isServerReachable()) {
             Log.d("---- LOG URL ----", "SERVER UNREACHABLE");
             JSONArray fail = new JSONArray();
             JSONObject jo = new JSONObject();
@@ -133,6 +133,7 @@ public class JSONHandler {
             is.close();
             json = sb.toString();
 
+            Log.d("JSON", json);
             /* if the answer from the server is not good, we return null */
             if(json.compareTo("{\"echec\":\"fail\"}") == 1) {
 
@@ -167,7 +168,7 @@ public class JSONHandler {
                 for(int i = 0; i < a.length(); i++) {
                     try {
                         j = a.getJSONObject(i);
-                        list.add(new Ingredient(j.getInt("ingredient_id"), j.getString("ingredient_name"), j.getInt("ingredient_categorie_id"), j.getInt("ingredient_quantite")));
+                        list.add(new Ingredient(j.getInt("ingredientId"), j.getString("ingredientNom"), j.getInt("ingredientCategorieId"), j.getInt("ingredientQuantite")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
