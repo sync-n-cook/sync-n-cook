@@ -8,7 +8,9 @@ and open the template in the editor.
     <head>
     <?php
     require_once "../Buisness/IngredientBuisness.php";
+    require_once "../Buisness/RecetteBuisness.php";
     $ingredient = new IngredientBuisness();
+     $recette = new RecetteBuisness();
     ?>
         <title>Kitchen live view</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,8 +34,7 @@ and open the template in the editor.
       
       <?php 
   
-    list($ingredientName, $ingredientQuantity)  = $ingredient->getIngredientJson();
-   $ing =  array( $ingredientName, $ingredientQuantity);    
+    list($ingredientName, $ingredientQuantity)  = $ingredient->getIngredientJson();   
     for($offset = 0; $offset < count($ingredientName); $offset++){
        ?>
             <tr>
@@ -55,28 +56,35 @@ and open the template in the editor.
         <table>
             <tr>
                 <td>Nom</td>
-                <td>Quantité</td>
+                <td>Déscription</td>
             </tr>
 
-      
-      <?php 
   
-    list($ingredientName, $ingredientQuantity)  = $ingredient->getIngredientJson();
-   $ing =  array( $ingredientName, $ingredientQuantity);    
-    for($offset = 0; $offset < count($ingredientName); $offset++){
+            
+     
+ 
+      <?php 
+    list($recetteName, $recetteDescription)  = $recette->RecetteJson();
+    $count = count($recetteName);
+ 
+    $offset = 0;
+        while( $count > 0){
        ?>
             <tr>
-             <td><?php echo $ingredientName[$offset] ?></td>
-             <td><?php echo $ingredientQuantity[$offset] ?></td>
+             <td><?php if(isset($recetteName[$offset]))echo $recetteName[$offset] ?></td>
+             <td><?php if(isset($recetteDescription[$offset])){echo $recetteDescription[$offset];$count--;} ?></td>
             </tr>
             <?php
-           }
+            $offset++;
+        
+       }
            ?>
          
            </table>
         </div>
     </div>
     
+
     
     </body>
 </html>

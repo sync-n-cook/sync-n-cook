@@ -2,7 +2,7 @@
 
 class DecodeJson{
  
-    public  function decode($ficName){
+    public  function decodeIngredient($ficName){
         $json = file_get_contents($ficName);
         $offset=0;
      $ingredientName = array();
@@ -17,6 +17,48 @@ class DecodeJson{
         }
         return array($ingredientName,$ingredientQuantity);
      
+    }
+    
+    public function decodeRecette($url){
+        $json = file_get_contents($url);
+        $offset=0;
+        
+        $recetteName = array();
+        $recetteDescription = array();
+        $recetteId = array();
+       
+        $parsed_json = json_decode($json);
+        
+         if(isset($parsed_json)|| sizeof($parsed_json)>0){
+          
+            foreach($parsed_json as $par){
+               $recetteName[$offset] = $parsed_json[$offset]->recetteNom;
+           
+               $recetteDescription[$offset] = $parsed_json[$offset]->recetteDescription;
+               $recetteId[$offset] = $parsed_json[$offset]->recetteId;
+               $offset++;
+            }
+              
+             return array($recetteName,$recetteDescription,$recetteId);
+           }
+         return null;
+ 
+    }
+    
+    public function getIngId($ficName){
+        $json = file_get_contents($ficName);
+        $offset=0;
+        $ingredientId = array();
+
+        $parsed_json = json_decode($json);
+        foreach($parsed_json as $par){
+        $ingredientId[$offset] = $parsed_json[$offset]->ingredientId;
+           $offset++;
+        }
+        return $ingredientId;
+        
+        
+        
     }
           
 }
