@@ -18,7 +18,7 @@
 
         <ImageButton
             android:id="@+id/b_kitchen"
-            android:text="@string/kitchen"
+            android:text="OK"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
@@ -68,24 +68,28 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="#00FF00"
+        android:background="#FFFFFF"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-        <Button
-            android:id="@+id/b_entrance"
-            android:text="@string/bedroom"
+        <ImageButton
+            android:id="@+id/b_parking"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/parkingbuttons"
+            android:background="@drawable/syh_logo_app_garage" />
 
-        <Button
-            android:id="@+id/b_starirs"
+        <ImageButton
+            android:id="@+id/b_night_missing_mode"
             android:text="@string/bathroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/night_missing_mode_buttons"
+            android:background="@drawable/syh_logo_app_moon"/>
     </LinearLayout>
 </LinearLayout>
