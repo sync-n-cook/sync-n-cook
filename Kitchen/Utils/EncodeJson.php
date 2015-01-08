@@ -18,6 +18,7 @@ class EncodeJson{
         var_dump($json);
           var_dump($ficName);
         $frigo = fopen($ficName,'r+');
+        ftruncate($frigo,0);
            fseek($frigo, 0);
            fputs($frigo, $json, strlen($json));            
            fclose($frigo);
