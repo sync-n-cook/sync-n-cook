@@ -9,6 +9,7 @@ require_once "../Utils/DecodeJson.php";
 class RecetteBuisness{
     
 
+    
     private function cleanArray($array){
      $cleanArray = array();
      
@@ -34,8 +35,9 @@ class RecetteBuisness{
      
         $offset = 0;
       
-       $ingredientId = $json->getIngId("../frigo.json");
+       $ingredientId = $this->getIngId("../ingId.json");
        foreach($ingredientId as $id){
+          
            $url = 'http://serveur-apprentissage.ensicaen.fr:8080/ProjetIntensif/webapi/recette/ingredient/'.$id;
           
            list($Name,$Description,$recetteId) = $json->decodeRecette($url);
@@ -54,7 +56,7 @@ class RecetteBuisness{
        $r = $this->cleanArray($recetteName);
        $rd = $this->cleanArray($recetteDescription);
  
-         unset($json);
+        unset($json);
         return array( $r, $rd);
     }
     
@@ -64,6 +66,27 @@ class RecetteBuisness{
            unset($json);
            return array( $recetteName, $recetteDesc);
     }
+    
+    public function setIngid($array){
+        var_dump($array);
+        $this->ingId = $array;
+        var_dump($this->ingId);
+    }
+    
+        public function getIngId($ficName){
+            $json = file_get_contents($ficName);
+        $offset=0;
+        $ingredientId = array();
+        
+        $parsed_json = json_decode($json);
+        foreach($parsed_json as $par){
+        $ingredientId[$offset] = $parsed_json[$offset];
+           $offset++;
+        }
+     
+        return $ingredientId;
+    }
+    
 }
 
 ?>

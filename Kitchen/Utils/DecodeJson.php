@@ -49,7 +49,7 @@ class DecodeJson{
         $json = file_get_contents($ficName);
         $offset=0;
         $ingredientId = array();
-
+        
         $parsed_json = json_decode($json);
         foreach($parsed_json as $par){
         $ingredientId[$offset] = $parsed_json[$offset]->ingredientId;
@@ -59,6 +59,7 @@ class DecodeJson{
 
     }
           
+   
     public function decodeRecetteFav($ficName){
         $json = file_get_contents($ficName);
         $offset=0;
