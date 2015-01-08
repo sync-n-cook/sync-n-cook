@@ -36,6 +36,11 @@ class RecetteBuisness{
         $offset = 0;
       
        $ingredientId = $this->getIngId("../ingId.json");
+       if($ingredientId==0){
+           $recetteName[0] = "pas de recette";
+             $recetteDescription[0] = "pas de recette";
+       return  array($recetteName,$recetteDescription) ;
+       }
        foreach($ingredientId as $id){
           
            $url = 'http://serveur-apprentissage.ensicaen.fr:8080/ProjetIntensif/webapi/recette/ingredient/'.$id;
@@ -55,7 +60,10 @@ class RecetteBuisness{
    
        $r = $this->cleanArray($recetteName);
        $rd = $this->cleanArray($recetteDescription);
- 
+       if(count($r)==0){
+           $r[0]="pas de recettes";
+            $rd[0]="pas de recettes";
+       }
         unset($json);
         return array( $r, $rd);
     }
@@ -77,7 +85,11 @@ class RecetteBuisness{
             $json = file_get_contents($ficName);
         $offset=0;
         $ingredientId = array();
-        
+       
+       if(strlen($json)==0){
+            
+           return "0";
+       }
         $parsed_json = json_decode($json);
         foreach($parsed_json as $par){
         $ingredientId[$offset] = $parsed_json[$offset];

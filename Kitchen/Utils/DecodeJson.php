@@ -26,9 +26,9 @@ class DecodeJson{
         $recetteName = array();
         $recetteDescription = array();
         $recetteId = array();
-       
+      
         $parsed_json = json_decode($json);
-        
+       
          if(isset($parsed_json)|| sizeof($parsed_json)>0){
           
             foreach($parsed_json as $par){
