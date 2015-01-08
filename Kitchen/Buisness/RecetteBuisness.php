@@ -54,14 +54,15 @@ class RecetteBuisness{
        $r = $this->cleanArray($recetteName);
        $rd = $this->cleanArray($recetteDescription);
  
-
+         unset($json);
         return array( $r, $rd);
     }
     
     public function getRecetteFav(){
          $json =  new DecodeJson();
            list($recetteName,$recetteDesc) = $json->decodeRecetteFav("../recetteFav.json");
-        return array( $recetteName, $recetteDesc);
+           unset($json);
+           return array( $recetteName, $recetteDesc);
     }
 }
 
