@@ -64,22 +64,7 @@ and open the template in the editor.
             
      
 
-      <?php 
-    list($recetteName, $recetteDescription)  = $recette->RecetteJson();
-    $count = count($recetteName);//on recupere le nombre total d'entrée
- 
-    $offset = 0;//indice du tableau
-        while( $count > 0){
-       ?>
-            <tr>
-             <td><?php if(isset($recetteName[$offset]))echo $recetteName[$offset] ?></td>
-             <td><?php if(isset($recetteDescription[$offset])){echo $recetteDescription[$offset];$count--;} ?></td><!-- si le tableau à l'indice offset est non nul on echo la valeur et décremente $count sinon on icrémente l'offset jusq'à $count=0 -->
-            </tr>
-            <?php
-            $offset++;
-            }
-           ?>
-        
+
            </table>
         </div>
     </div>

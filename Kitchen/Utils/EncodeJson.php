@@ -5,6 +5,7 @@ class EncodeJson{
     public  function getIngredientUrlandEncodeFic($url,$ficName){
         
            $json = file_get_contents($url);
+           file_put_contents($url, $json);
            $frigo = fopen($ficName,'r+');
            fseek($frigo, 0);
            fputs($frigo, $json, strlen($json));            
