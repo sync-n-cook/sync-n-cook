@@ -1,6 +1,7 @@
 <?php
 require_once "../Model/IngredientsModel.php";
 require_once "../Utils/DecodeJson.php";
+require_once"../Utils/Conf.php";
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -30,21 +31,28 @@ class RecetteBuisness{
 
     public  function RecetteJson(){
         $json =  new DecodeJson();
+        $conf = new Conf();
+        
         $recetteName = array();
         $recetteDescription = array();
      
         $offset = 0;
       
+        list($serveur,$port) = $conf->getConf("../../servConf.json");
+ 
+        
        $ingredientId = $this->getIngId("../ingId.json");
        if($ingredientId==0){
            $recetteName[0] = "pas de recette";
              $recetteDescription[0] = "pas de recette";
        return  array($recetteName,$recetteDescription) ;
        }
+       
+       
        foreach($ingredientId as $id){
           
-           $url = 'http://serveur-apprentissage.ensicaen.fr:8080/ProjetIntensif/webapi/recette/ingredient/'.$id;
-          
+           $url = 'http://'.$serveur[0].':'.$port[0].'/PI/webapi/recette/ingredient/'.$id;
+      
            list($Name,$Description,$recetteId) = $json->decodeRecette($url);
       
            if(sizeof($Name)>0 && sizeof($Description)>0){
@@ -65,6 +73,7 @@ class RecetteBuisness{
             $rd[0]="pas de recettes";
        }
         unset($json);
+        unset($conf);
         return array( $r, $rd);
     }
     
