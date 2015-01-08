@@ -71,3 +71,16 @@ margin-left: auto;
 #textRecette{
     text-decoration: underline;
 }
+
+ th{
+    text-decoration: underline;
+  
+}
+
+td,tr{
+    text-align: center;
+}
+
+table{
+         margin: auto;
+}
