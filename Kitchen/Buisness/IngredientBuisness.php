@@ -13,6 +13,7 @@ class IngredientBuisness{
     public  function getIngredientJson(){
         $json =  new DecodeJson();
         list($ingredientName,$ingredientQuantity) = $json->decodeIngredient("../frigo.json");
+        unset($json);
         return array( $ingredientName, $ingredientQuantity);
     } 
 }
