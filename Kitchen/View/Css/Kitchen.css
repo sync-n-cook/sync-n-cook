@@ -58,14 +58,14 @@ height: 170px;
 float: right;
 
  text-align: center;
- width: 300px;
+ width: 600px;
 }
 
 #recetteFav{
 float: bottom;
 margin-left: auto;
  text-align: center;
- width: 300px;
+ width: 600px;
 }
 
 #textRecette{
@@ -77,10 +77,14 @@ margin-left: auto;
   
 }
 
-td,tr{
+td{
+
     text-align: center;
+    
 }
 
 table{
-         margin: auto;
+     margin: auto;
+     border-collapse: separate;
+     border-spacing: 30px 3px; 
 }
