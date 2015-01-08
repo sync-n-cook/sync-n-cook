@@ -12,22 +12,17 @@ class RecetteBuisness{
     private function cleanArray($array){
      $cleanArray = array();
      
-      $o=0;
-      $off = 0;
+      $o=0;//indice du tableau 1
+      $off = 0;//indice du tableau 2
         for($o = 0 ; $o < count($array) ; $o++){
             for($offset = 0; $offset < count($array[$o]); $offset++){
         
-                $cleanArray[$off] = $array[$o][$offset];
+                $cleanArray[$off] = $array[$o][$offset]; // reduction du tableau a 2 dimension à une 1 dimension
                 $off++;
             }
         }
         
-        $offset = 0;
-        foreach ($cleanArray as $clean){
-         
-            $offset++;
-        }
-        return array_unique($cleanArray);
+        return array_unique($cleanArray);//efface les doublons
     }
     
     
@@ -51,7 +46,6 @@ class RecetteBuisness{
             $recetteDescription[$offset] = $Description;      
             $recetteId[$offset] = $id;
             
-        
                $offset++;
             }
          
@@ -62,6 +56,12 @@ class RecetteBuisness{
  
 
         return array( $r, $rd);
+    }
+    
+    public function getRecetteFav(){
+         $json =  new DecodeJson();
+           list($recetteName,$recetteDesc) = $json->decodeRecetteFav("../recetteFav.json");
+        return array( $recetteName, $recetteDesc);
     }
 }
 

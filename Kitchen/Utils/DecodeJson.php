@@ -56,10 +56,32 @@ class DecodeJson{
            $offset++;
         }
         return $ingredientId;
-        
-        
-        
+
     }
           
+    public function decodeRecetteFav($ficName){
+        $json = file_get_contents($ficName);
+        $offset=0;
+        
+        $recetteName = array();
+        $recetteDescription = array();
+    
+       
+        $parsed_json = json_decode($json);
+        
+         if(isset($parsed_json)|| sizeof($parsed_json)>0){
+          
+            foreach($parsed_json as $par){
+               $recetteName[$offset] = $parsed_json[$offset]->recetteNom;
+               $recetteDescription[$offset] = $parsed_json[$offset]->recetteDescription;
+               $offset++;
+            }
+              
+             return array($recetteName,$recetteDescription);
+           }
+         return null;
+ 
+    }
+    
 }
 ?>

@@ -61,6 +61,13 @@ float: right;
  width: 300px;
 }
 
+#recetteFav{
+float: bottom;
+margin-left: auto;
+ text-align: center;
+ width: 300px;
+}
+
 #textRecette{
     text-decoration: underline;
 }
