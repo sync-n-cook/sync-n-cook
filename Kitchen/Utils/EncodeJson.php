@@ -15,6 +15,9 @@ class EncodeJson{
     
     public function setIngId($array,$ficName){
         $json = json_encode($array);
+        var_dump($json);
+             var_dump($array);
+                  var_dump($ficName);
         $frigo = fopen($ficName,'r+');
         ftruncate($frigo,0);
            fseek($frigo, 0);
