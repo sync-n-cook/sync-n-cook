@@ -21,7 +21,7 @@ foreach ($_GET as $nomchamp => $valeurchamp)
                                 var_dump( $nom);
 			
 				var_dump( $valeur);
-                                if($nom[0]=="id"){
+                                if($nom[0]=="id0"){
                                    
                                     $encode = new EncodeJson();
                                     $encode->setIngId($valeur, "../ingId.json");
