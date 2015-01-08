@@ -1,6 +1,7 @@
 <?php
 require_once "../Model/IngredientsModel.php";
 require_once "../Utils/DecodeJson.php";
+require_once"../Utils/Conf.php";
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,6 +10,7 @@ require_once "../Utils/DecodeJson.php";
 class RecetteBuisness{
     
 
+    
     private function cleanArray($array){
      $cleanArray = array();
      
@@ -29,15 +31,28 @@ class RecetteBuisness{
 
     public  function RecetteJson(){
         $json =  new DecodeJson();
+        $conf = new Conf();
+        
         $recetteName = array();
         $recetteDescription = array();
      
         $offset = 0;
       
-       $ingredientId = $json->getIngId("../frigo.json");
+        list($serveur,$port) = $conf->getConf("../../servConf.json");
+ 
+        
+       $ingredientId = $this->getIngId("../ingId.json");
+       if($ingredientId==0){
+           $recetteName[0] = "pas de recette";
+             $recetteDescription[0] = "pas de recette";
+       return  array($recetteName,$recetteDescription) ;
+       }
+       
+       
        foreach($ingredientId as $id){
-           $url = 'http://serveur-apprentissage.ensicaen.fr:8080/ProjetIntensif/webapi/recette/ingredient/'.$id;
           
+           $url = 'http://'.$serveur[0].':'.$port[0].'/PI/webapi/recette/ingredient/'.$id;
+      
            list($Name,$Description,$recetteId) = $json->decodeRecette($url);
       
            if(sizeof($Name)>0 && sizeof($Description)>0){
@@ -53,8 +68,12 @@ class RecetteBuisness{
    
        $r = $this->cleanArray($recetteName);
        $rd = $this->cleanArray($recetteDescription);
- 
-         unset($json);
+       if(count($r)==0){
+           $r[0]="pas de recettes";
+            $rd[0]="pas de recettes";
+       }
+        unset($json);
+        unset($conf);
         return array( $r, $rd);
     }
     
@@ -64,6 +83,31 @@ class RecetteBuisness{
            unset($json);
            return array( $recetteName, $recetteDesc);
     }
+    
+    public function setIngid($array){
+        var_dump($array);
+        $this->ingId = $array;
+        var_dump($this->ingId);
+    }
+    
+        public function getIngId($ficName){
+            $json = file_get_contents($ficName);
+        $offset=0;
+        $ingredientId = array();
+       
+       if(strlen($json)==0){
+            
+           return "0";
+       }
+        $parsed_json = json_decode($json);
+        foreach($parsed_json as $par){
+        $ingredientId[$offset] = $parsed_json[$offset];
+           $offset++;
+        }
+     
+        return $ingredientId;
+    }
+    
 }
 
 ?>

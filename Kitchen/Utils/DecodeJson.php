@@ -26,9 +26,9 @@ class DecodeJson{
         $recetteName = array();
         $recetteDescription = array();
         $recetteId = array();
-       
+      
         $parsed_json = json_decode($json);
-        
+       
          if(isset($parsed_json)|| sizeof($parsed_json)>0){
           
             foreach($parsed_json as $par){
@@ -49,7 +49,7 @@ class DecodeJson{
         $json = file_get_contents($ficName);
         $offset=0;
         $ingredientId = array();
-
+        
         $parsed_json = json_decode($json);
         foreach($parsed_json as $par){
         $ingredientId[$offset] = $parsed_json[$offset]->ingredientId;
@@ -59,6 +59,7 @@ class DecodeJson{
 
     }
           
+   
     public function decodeRecetteFav($ficName){
         $json = file_get_contents($ficName);
         $offset=0;
