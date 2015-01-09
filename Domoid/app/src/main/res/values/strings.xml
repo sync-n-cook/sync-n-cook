@@ -13,13 +13,11 @@
     <string name="voletup">Ouvrir volets</string>
     <string name="voletdown">Fermer volets</string>
     <string name="validate">Valider</string>
-<<<<<<< HEAD
     <string name="camera">Camera</string>
-
-=======
     <string name="title_activity_activity_parking">Parking</string>
-    <string name="action_settings">Settings</string>
+    <string name="menu_search">Rechercher</string>
+    <string name="menu_refresh">Rafraîchir</string>
     <string name="porte_garage_en_cours">Ouverture porte garage en Cours</string>
->>>>>>> bc38f0d29ab72a469ad62c24c8449369cfbc8726
+    <string name="action_settings">tititoto</string>
 
 </resources>

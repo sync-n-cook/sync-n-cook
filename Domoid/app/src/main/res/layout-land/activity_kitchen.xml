@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
+    android:weightSum="5"
     android:orientation="horizontal" >
 
     <LinearLayout
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:padding="10dp">
 
 
@@ -39,7 +40,7 @@
         android:layout_width="0dp"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_weight="2" >
+        android:layout_weight="3" >
 
 
         <TextView
@@ -54,7 +55,8 @@
         <ListView
             android:id="@+id/list_recipe"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
 
     </LinearLayout>
 

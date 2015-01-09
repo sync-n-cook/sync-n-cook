@@ -1,9 +1,12 @@
 package com.example.thibaut.domoid;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,11 +22,13 @@ import com.example.thibaut.objects.Recette;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by thibaut on 06/01/2015.
  */
-public class ActivityKitchen extends FragmentActivity {
+public class ActivityKitchen extends ActionBarActivity {
 
 
     private HttpHandler _httpHandler;
@@ -147,6 +152,20 @@ public class ActivityKitchen extends FragmentActivity {
                 }
             });
         }
+
+        _lvr.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Recette r = _lRecettes.get(position);
+                Intent i = new Intent(getApplicationContext(), ActivityDetailRecette.class);
+                i.putExtra("current", r);
+                startActivity(i);
+
+            }
+        });
+
+
     }
 
     private class ObtenirIngredients extends AsyncTask<Void, Void, ArrayList<Ingredient>> {
@@ -163,8 +182,18 @@ public class ActivityKitchen extends FragmentActivity {
     private class ObtenirRecettes extends AsyncTask<Void, Void, ArrayList<Recette>> {
 
         protected ArrayList<Recette> doInBackground(Void... args) {
-            ArrayList<Integer> _idIngredients = new ArrayList<Integer>();
-            _idIngredients.addAll(_selectionnes.keySet());
+            ArrayList<String> _idIngredients = new ArrayList<String>();
+            _idIngredients.addAll(_selectionnes.values());
+
+            ArrayList<Integer> id = new ArrayList<Integer>();
+            Iterator iterator = _selectionnes.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry entry = (Map.Entry) iterator.next();
+                Integer key = (Integer) entry.getKey();
+                id.add(key);
+            }
+            //_httpHandler.updateScreen(id);
+
             return _httpHandler.getListRecettes(_idIngredients);
         }
 
@@ -179,6 +208,27 @@ public class ActivityKitchen extends FragmentActivity {
         outState.putSerializable("hashmap", _selectionnes);
         outState.putParcelableArrayList("ingredients", _lIngredients);
         super.onSaveInstanceState(outState);
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_kitchen, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh:
+                ObtenirIngredients oi = new ObtenirIngredients();
+                oi.execute();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

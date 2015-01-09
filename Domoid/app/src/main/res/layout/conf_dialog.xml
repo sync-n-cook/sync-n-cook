@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="500dp"
+    android:layout_height="500dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="IP Raspberry"/>
+
+    <EditText
+        android:id="@+id/ip_rasp"
+        android:text="http://192.168.215.252"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="IP Serveur"/>
+
+    <EditText
+        android:id="@+id/ip_serveur"
+        android:text="http://serveur-apprentissage.ensicaen.fr:8080"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/valid_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Valider"/>
+
+</LinearLayout>

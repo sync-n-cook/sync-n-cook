@@ -6,21 +6,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageButton;
+
+import com.example.thibaut.library.HttpHandler;
 
 
 public class MainActivity extends ActionBarActivity {
 
     private GridView _grid;
+    private HttpHandler _httpHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        _httpHandler = new HttpHandler(this);
 
-        ImageButton bKitchen = (ImageButton)findViewById(R.id.b_kitchen);
+        Button bKitchen = (Button)findViewById(R.id.b_kitchen);
         bKitchen.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -31,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        ImageButton bLivingroom = (ImageButton)findViewById(R.id.b_livingroom);
+        Button bLivingroom = (Button)findViewById(R.id.b_livingroom);
         bLivingroom.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -42,17 +46,19 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        ImageButton bEntrance = (ImageButton)findViewById(R.id.b_entrance);
+        Button bEntrance = (Button)findViewById(R.id.b_entrance);
         bEntrance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View b) {
-                Intent i = new Intent(b.getContext(), ActivityEntrance.class);
+                /*Intent i = new Intent(b.getContext(), ActivityEntrance.class);
 
-                startActivity(i);
+                startActivity(i);*/
+
+                _httpHandler.startCamera();
 
             }
         });
-        ImageButton bParking=(ImageButton)findViewById(R.id.b_parking);
+        Button bParking=(Button)findViewById(R.id.b_parking);
         bParking.setOnClickListener(new View.OnClickListener() {
 
             @Override

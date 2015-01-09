@@ -45,12 +45,10 @@ public class RecetteAdapter extends BaseAdapter {
 
         TextView name = (TextView)gridView.findViewById(R.id.nom);
         TextView duree = (TextView)gridView.findViewById(R.id.duree);
-        TextView description = (TextView)gridView.findViewById(R.id.description);
 
         Recette r = _lRecettes.get(position);
         name.setText(r.getNom());
-        description.setText(r.getDescription());
-        duree.setText(r.getDuree());
+        duree.setText("Durée : "+r.getDuree() + " min");
 
         return gridView;
     }
