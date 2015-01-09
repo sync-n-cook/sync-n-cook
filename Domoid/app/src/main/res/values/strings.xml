@@ -16,5 +16,13 @@
     <string name="title_activity_activity_parking">Parking</string>
     <string name="action_settings">Settings</string>
     <string name="porte_garage_en_cours">Ouverture porte garage en Cours</string>
+    <string name="Kitchen">Cuisine</string>
+    <string name="ajout_pieces">Rajouter des Pieces à gérer</string>
+    <string name="title_activity_pieces__adding">Domotique</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_add_pieces">Domotique</string>
+    <string name="pieces_a_ajouter">Pieces à Rajouter</string>
+    <string name="title_activity_activity_test_web_view">ActivityTestWebView</string>
 
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/t_pieces_a_ajouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:text="@string/pieces_a_ajouter"
+        android:gravity="center_horizontal|bottom" />
+
+
+        <Button
+            android:id="@+id/valid_pieces"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/validate"
+            android:layout_gravity="center_horizontal" />
+
+
+        <ListView
+            android:id="@+id/list_pieces"
+            android:padding="10dp"
+            android:layout_below="@id/t_pieces_a_ajouter"
+            android:layout_above="@id/valid_pieces"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+</LinearLayout>
