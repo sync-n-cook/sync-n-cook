@@ -23,7 +23,8 @@
             android:gravity="center"
             android:textSize="20sp"
             android:text="@string/ingredients"
-            android:background="@drawable/layoutborder"/>
+            android:textColor="#FFFFFF"
+            android:background="#CC0000"/>
 
         <ListView
             android:id="@+id/list_ingredients"
@@ -50,8 +51,8 @@
             android:textSize="20sp"
             android:gravity="center"
             android:text="@string/recipe"
-            android:background="@drawable/layoutborder"/>
-
+            android:textColor="#FFFFFF"
+            android:background="#CC0000"/>
         <ListView
             android:id="@+id/list_recipe"
             android:layout_width="fill_parent"

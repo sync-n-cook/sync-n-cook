@@ -68,6 +68,9 @@ public class ActivityKitchen extends ActionBarActivity {
             _selectionnes = new HashMap<Integer, String>();
         }
 
+        VideoKitchen vk = new VideoKitchen();
+        vk.execute();
+
         _lvi = (ListView)findViewById(R.id.list_ingredients);
 
         _lRecettes = new ArrayList<Recette>();
@@ -168,6 +171,14 @@ public class ActivityKitchen extends ActionBarActivity {
 
     }
 
+    private class VideoKitchen extends AsyncTask<Void, Void, Void> {
+
+        protected Void doInBackground(Void... args) {
+            _httpHandler.startVideoKitchen();
+            return null;
+        }
+    }
+
     private class ObtenirIngredients extends AsyncTask<Void, Void, ArrayList<Ingredient>> {
 
         protected ArrayList<Ingredient> doInBackground(Void... args) {
@@ -192,7 +203,7 @@ public class ActivityKitchen extends ActionBarActivity {
                 Integer key = (Integer) entry.getKey();
                 id.add(key);
             }
-            //_httpHandler.updateScreen(id);
+            _httpHandler.updateScreen(id);
 
             return _httpHandler.getListRecettes(_idIngredients);
         }

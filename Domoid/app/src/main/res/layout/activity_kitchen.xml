@@ -11,12 +11,13 @@
 
         <TextView
             android:id="@+id/t_ingredients"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
             android:text="@string/ingredients"
-            android:background="@drawable/layoutborder"/>
+            android:textColor="#FFFFFF"
+            android:background="#CC0000"/>
 
         <Button
             android:id="@+id/valid"
@@ -50,7 +51,8 @@
             android:textSize="20sp"
             android:layout_alignParentTop="true"
             android:text="@string/recipe"
-            android:background="@drawable/layoutborder"/>
+            android:textColor="#FFFFFF"
+            android:background="#CC0000"/>
 
         <ListView
             android:id="@+id/list_recipe"

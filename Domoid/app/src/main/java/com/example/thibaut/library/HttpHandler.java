@@ -25,6 +25,11 @@ public class HttpHandler {
     private String _shutterUp = ":8080/api?api_number=1";
     private String _shutterDown = ":8080/api?api_number=2";
 
+    private String _videoKitchen = ":8080/api?api_number=3";
+    private String _soundKitchen = ":8080/api?api_number=8";
+    private String _openGarage = ":8080/api?api_number=5";
+
+
     private String _camera = ":8081";
 
 
@@ -56,6 +61,18 @@ public class HttpHandler {
         Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(_sc.getIpRasp()+_camera) );
         intent.setComponent(new ComponentName("org.mozilla.firefox", "org.mozilla.firefox.App"));
         _context.startActivity(intent);
+    }
+
+    public void startVideoKitchen() {
+        _jHandler.sendHttpRequest(_sc.getIpRasp()+_videoKitchen);
+    }
+
+    public void openGarage() {
+        _jHandler.sendHttpRequest(_sc.getIpRasp()+_openGarage);
+    }
+
+    public void launchRecipe() {
+        _jHandler.sendHttpRequest(_sc.getIpRasp()+_soundKitchen);
     }
 
     public ArrayList<Ingredient> getListIngredients() {

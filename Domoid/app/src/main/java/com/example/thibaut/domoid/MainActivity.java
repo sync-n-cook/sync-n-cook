@@ -1,6 +1,7 @@
 package com.example.thibaut.domoid;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -64,9 +65,9 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View b) {
 
+                VideoGarage vg = new VideoGarage();
+                vg.execute();
 
-                Intent parking = new Intent(b.getContext(), ActivitySalon.class);
-                startActivity(parking);
             }
         });
     }
@@ -78,5 +79,14 @@ public class MainActivity extends ActionBarActivity {
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    private class VideoGarage extends AsyncTask<Void, Void, Void> {
+
+        protected Void doInBackground(Void... args) {
+            _httpHandler.openGarage();
+            return null;
+        }
+    }
+
 
 }
