@@ -18,7 +18,7 @@ public class ActivityParking extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salon);
+        setContentView(R.layout.activity_parking);
 
         _httpHandler = new HttpHandler(this);
 
@@ -52,7 +52,7 @@ public class ActivityParking extends ActionBarActivity {
 
         @Override
         protected Void doInBackground(Boolean... state) {
-            _httpHandler.handleShutters(state[0]);
+            _httpHandler.parkingShutter(state[0]);
             return null;
         }
 

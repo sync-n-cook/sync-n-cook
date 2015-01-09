@@ -21,6 +21,7 @@ public class HttpHandler {
     private String _shutterUp = "http://192.168.43.249:8080/api?api_number=1";
     private String _shutterDown = "http://192.168.43.249:8080/api?api_number=2";
 
+    private String _parking_door_up="http://192.168.43.249:8080/api?api_number=4";
     //private String _checkForIngredients = "http://192.168.43.158:8086/PI/webapi/ingredient/";
     //private String _checkForRecettes = "http://192.168.43.158:8086/PI/webapi/recette/ingredient/";
 
@@ -40,6 +41,11 @@ public class HttpHandler {
         }
     }
 
+    public void parkingShutter(boolean b){
+        if(b){
+            _jHandler.sendHttpRequest(_parking_door_up);
+        }
+    }
     public ArrayList<Ingredient> getListIngredients() {
         JSONArray array = _jHandler.getJSONFromServer(_checkForIngredients, null);
         return _jHandler.jsonToListIngredients(array);
