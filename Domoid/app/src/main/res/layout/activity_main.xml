@@ -16,21 +16,23 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/b_kitchen"
-            android:text="OK"
+            android:text="Cuisine"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
+            android:textColor="#858585"
             android:src="@drawable/kitchen_buttons"
             android:background="@drawable/syh_logo_app_kitchen"
             />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_livingroom"
             android:text="@string/livingroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:textColor="#858585"
             android:layout_weight="1"
             android:src="@drawable/living_room_buttons"
             android:background="@drawable/syh_logo_app_canap"
@@ -46,17 +48,19 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
-            android:id="@+id/b_bedroom"
-            android:text="@string/bedroom"
+        <Button
+            android:id="@+id/b_entrance"
+            android:textColor="#858585"
+            android:text="Entrée"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
             android:src="@drawable/bedroom_buttons"
             android:background="@drawable/syh_logo_app_all" />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_bathroom"
+            android:textColor="#858585"
             android:text="@string/bathroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -74,17 +78,21 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/b_parking"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
+            android:textColor="#858585"
             android:src="@drawable/parkingbuttons"
+            android:text="Garage"
+            android:gravity="center"
             android:background="@drawable/syh_logo_app_garage" />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_night_missing_mode"
-            android:text="@string/bathroom"
+            android:text="Mode nuit"
+            android:textColor="#858585"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
@@ -109,5 +117,19 @@
             android:background="@android:color/transparent"
             />
 
-        </LinearLayout>
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/appstore"
+            android:text="AppStore"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
 </LinearLayout>

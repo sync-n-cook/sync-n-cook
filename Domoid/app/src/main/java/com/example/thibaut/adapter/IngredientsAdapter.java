@@ -57,13 +57,38 @@ public class IngredientsAdapter extends BaseAdapter {
         TextView name = (TextView)gridView.findViewById(R.id.nom);
         TextView quantity = (TextView)gridView.findViewById(R.id.quantite);
         ImageView icon = (ImageView) gridView.findViewById(R.id.icon);
+        TextView dateper = (TextView)gridView.findViewById(R.id.dateper);
 
         Ingredient i = _lIngredients.get(position);
         name.setText(i.getNom());
-        quantity.setText("Quantity :"+i.getQuantite());
+        quantity.setText("Quantité : "+i.getQuantite());
+        dateper.setText("Date limite : "+i.getDate());
 
-        /* on recupere pour l'instant une image random, a remplacer par l'image categorie plus tard */
-        Drawable d = _context.getResources().getDrawable(R.drawable.symbole);
+        Drawable d;
+
+        switch (i.getCat()) {
+            case 1:
+                d = _context.getResources().getDrawable(R.drawable.logo_lait);
+                break;
+            case 2:
+                d = _context.getResources().getDrawable(R.drawable.logo_viande);
+                break;
+            case 3:
+                d = _context.getResources().getDrawable(R.drawable.logo_legumes);
+                break;
+            case 4:
+                d = _context.getResources().getDrawable(R.drawable.logo_boisson);
+                break;
+            case 5:
+                d = _context.getResources().getDrawable(R.drawable.logo_sauce);
+                break;
+            case 6:
+                d = _context.getResources().getDrawable(R.drawable.logo_fruit);
+                break;
+            default:
+                d = _context.getResources().getDrawable(R.drawable.logo_fruit);
+                break;
+        }
 
         icon.setImageDrawable(d);
         return gridView;

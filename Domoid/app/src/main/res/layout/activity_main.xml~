@@ -4,8 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:weightSum="6"
+<<<<<<< HEAD
+    android:weightSum="8"
+    android:padding="5dp"
+    android:id="@+id/layout_global">
+=======
+    android:weightSum="7"
     android:padding="5dp">
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
 
 
     <LinearLayout
@@ -15,21 +21,23 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/b_kitchen"
-            android:text="OK"
+            android:text="Cuisine"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
+            android:textColor="#858585"
             android:src="@drawable/kitchen_buttons"
             android:background="@drawable/syh_logo_app_kitchen"
             />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_livingroom"
             android:text="@string/livingroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:textColor="#858585"
             android:layout_weight="1"
             android:src="@drawable/living_room_buttons"
             android:background="@drawable/syh_logo_app_canap"
@@ -45,17 +53,19 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
-            android:id="@+id/b_bedroom"
-            android:text="@string/bedroom"
+        <Button
+            android:id="@+id/b_entrance"
+            android:textColor="#858585"
+            android:text="Entrée"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
             android:src="@drawable/bedroom_buttons"
             android:background="@drawable/syh_logo_app_all" />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_bathroom"
+            android:textColor="#858585"
             android:text="@string/bathroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -66,31 +76,70 @@
     </LinearLayout>
 
     <LinearLayout
-<<<<<<< HEAD
-=======
         android:background="#FFFFFF"
->>>>>>> a1a2795b5cfbb92f6ada87126edbc9ceb09bc18d
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="2"
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/b_parking"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
+            android:textColor="#858585"
             android:src="@drawable/parkingbuttons"
+            android:text="Garage"
+            android:gravity="center"
             android:background="@drawable/syh_logo_app_garage" />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_night_missing_mode"
-            android:text="@string/bathroom"
+            android:text="Mode nuit"
+            android:textColor="#858585"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
             android:src="@drawable/night_missing_mode_buttons"
             android:background="@drawable/syh_logo_app_moon"/>
+
     </LinearLayout>
+<<<<<<< HEAD
+    <LinearLayout
+        android:id="@+id/layout_ajout"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <Button
+            android:id="@+id/b_add_pieces"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/ajout_pieces"
+            android:background="@android:color/transparent"
+            />
+
+        </LinearLayout>
+=======
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/appstore"
+            android:text="AppStore"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
+
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
 </LinearLayout>

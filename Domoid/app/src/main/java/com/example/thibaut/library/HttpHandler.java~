@@ -58,11 +58,13 @@ public class HttpHandler {
         }
     }
 
+<<<<<<< HEAD
     public void parkingShutter(boolean b){
         if(b){
             _jHandler.sendHttpRequest(_parking_door_up);
         }
     }
+=======
     public void startCamera() {
         Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(_sc.getIpRasp()+_camera) );
         intent.setComponent(new ComponentName("org.mozilla.firefox", "org.mozilla.firefox.App"));
@@ -81,6 +83,7 @@ public class HttpHandler {
         _jHandler.sendHttpRequest(_sc.getIpRasp()+_soundKitchen);
     }
 
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
     public ArrayList<Ingredient> getListIngredients() {
 
         JSONArray array = _jHandler.getJSONFromServer(_sc.getIpServ()+_checkForIngredients, null);

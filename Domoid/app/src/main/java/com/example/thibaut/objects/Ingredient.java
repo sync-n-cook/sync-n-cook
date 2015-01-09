@@ -12,12 +12,14 @@ public class Ingredient implements Parcelable {
     private String _nom;
     private int _categorie;
     private int _quantite;
+    private String _dateper;
 
-    public Ingredient(int id, int cat, String nom, int quantite) {
+    public Ingredient(int id, int cat, String nom, int quantite, String date) {
         _id = id;
         _nom = nom;
         _categorie = cat;
         _quantite = quantite;
+        _dateper = date;
     }
 
     public String getNom() {
@@ -36,6 +38,11 @@ public class Ingredient implements Parcelable {
         return _id;
     }
 
+    public String getDate() {
+        return _dateper;
+    }
+
+
 
     @Override
     public int describeContents()
@@ -50,6 +57,7 @@ public class Ingredient implements Parcelable {
         dest.writeString(_nom);
         dest.writeInt(_categorie);
         dest.writeInt(_quantite);
+        dest.writeString(_dateper);
 
     }
 
@@ -73,6 +81,7 @@ public class Ingredient implements Parcelable {
         this._nom = in.readString();
         this._categorie = in.readInt();
         this._quantite = in.readInt();
+        this._dateper = in.readString();
     }
 
 }

@@ -165,7 +165,8 @@ public class JSONHandler {
                 for(int i = 0; i < a.length(); i++) {
                     try {
                         j = a.getJSONObject(i);
-                        list.add(new Ingredient(j.getInt("ingredientId"), j.getInt("ingredientCategorieId"), j.getString("ingredientNom"),j.getInt("ingredientQuantite")));
+                        Log.d("ID CAT", ""+j.getInt("ingredientCategorieId"));
+                        list.add(new Ingredient(j.getInt("ingredientId"), j.getInt("ingredientCategorieId"), j.getString("ingredientNom"),j.getInt("ingredientQuantite"), j.getString("ingredientPeremption")));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -183,7 +184,7 @@ public class JSONHandler {
             for(int i = 0; i < a.length(); i++) {
                 try {
                     j = a.getJSONObject(i);
-                    list.add(new Recette(j.getInt("recetteId"), j.getString("recetteNom"), j.getString("recetteDescription"),"toto"));
+                    list.add(new Recette(j.getInt("recetteId"), j.getString("recetteNom"), j.getString("recetteDescription"), j.getString("recetteDuree")));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

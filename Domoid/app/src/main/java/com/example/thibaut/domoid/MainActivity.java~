@@ -17,8 +17,10 @@ import android.widget.LinearLayout;
 
 import java.io.*;
 import java.util.ArrayList;
+=======
 
 import com.example.thibaut.library.HttpHandler;
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
 
 
 public class MainActivity extends ActionBarActivity {
@@ -30,13 +32,16 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
         //Rajout des boutons pour les pièces
         //on teste la présence de nouvelles pièces dans notre fichier
         ImageButton bKitchen = (ImageButton)findViewById(R.id.b_kitchen);
+=======
 
         _httpHandler = new HttpHandler(this);
 
         Button bKitchen = (Button)findViewById(R.id.b_kitchen);
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
         bKitchen.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -76,9 +81,14 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View b) {
 
+<<<<<<< HEAD
+                Intent parking = new Intent(b.getContext(), ActivityParking.class);
+                startActivity(parking);
+=======
                 VideoGarage vg = new VideoGarage();
                 vg.execute();
 
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
             }
         });
 

@@ -4,7 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+<<<<<<< HEAD
     android:weightSum="8"
+=======
+    android:weightSum="5"
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
     android:padding="5dp">
 
 
@@ -15,18 +19,24 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/b_kitchen"
+<<<<<<< HEAD
             android:text="OK"
+=======
+            android:text="Cuisine"
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:textColor="#858585"
             android:layout_weight="1"
             android:src="@drawable/kitchen_buttons"
             android:background="@drawable/syh_logo_app_kitchen"
             />
 
-        <ImageButton
+        <Button
             android:id="@+id/b_livingroom"
+            android:textColor="#858585"
             android:text="@string/livingroom"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -35,6 +45,18 @@
             android:background="@drawable/syh_logo_app_canap"
             />
 
+<<<<<<< HEAD
+=======
+        <Button
+            android:id="@+id/b_entrance"
+            android:text="Entrée"
+            android:textColor="#858585"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/bedroom_buttons"
+            android:background="@drawable/syh_logo_app_all" />
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
 
     </LinearLayout>
 
@@ -45,18 +67,10 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <ImageButton
-            android:id="@+id/b_bedroom"
-            android:text="@string/bedroom"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:layout_weight="1"
-            android:src="@drawable/bedroom_buttons"
-            android:background="@drawable/syh_logo_app_all" />
-
-        <ImageButton
+        <Button
             android:id="@+id/b_bathroom"
             android:text="@string/bathroom"
+            android:textColor="#858585"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:layout_weight="1"
@@ -98,6 +112,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
         <Button
+<<<<<<< HEAD
             android:id="@+id/b_add_pieces"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -105,6 +120,39 @@
             android:text="@string/ajout_pieces"
             android:background="@android:color/transparent"
             />
+=======
+            android:id="@+id/b_parking"
+            android:text="Garage"
+            android:textColor="#858585"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/parkingbuttons"
+            android:background="@drawable/syh_logo_app_garage" />
+
+        <Button
+            android:id="@+id/b_night_missing_mode"
+            android:text="Mode nuit"
+            android:textColor="#858585"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/night_missing_mode_buttons"
+            android:background="@drawable/syh_logo_app_moon"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3">
+    <Button
+        android:id="@+id/appstore"
+        android:text="AppStore"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+>>>>>>> 3513000ecb01a237cd653c7c606183089162e4a4
 
     </LinearLayout>
 </LinearLayout>

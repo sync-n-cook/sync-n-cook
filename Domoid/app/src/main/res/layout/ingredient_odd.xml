@@ -3,13 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="6dip"
-
     android:background="@drawable/ingredient" >
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="6dip"
@@ -17,10 +16,20 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/quantite"
+        android:id="@+id/dateper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/icon"
+        android:layout_toRightOf="@id/icon"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="3dp"/>
+
+
+    <TextView
+        android:id="@+id/quantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/dateper"
         android:layout_toRightOf="@id/icon"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="3dp"/>

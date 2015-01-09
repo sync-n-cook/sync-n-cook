@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="40dp">
 
-    <ImageButton
+    <Button
         android:id="@+id/volet_up"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
         android:src="@drawable/living_room_buttons"
         android:background="@drawable/syh_logo_app_up"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/volet_down"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

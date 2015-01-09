@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="40dp">
 
-    <ImageButton
+
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_centerInParent="true"/>
+
+    <Button
         android:id="@+id/volet_up"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:layout_weight="1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/center"
         android:src="@drawable/living_room_buttons"
         android:background="@drawable/syh_logo_app_up"/>
-
-    <ImageButton
+    <Button
         android:id="@+id/volet_down"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_width="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/center"
+        android:layout_height="120dp"
         android:src="@drawable/living_room_buttons"
         android:background="@drawable/syh_logo_app_down"/>
 
-</LinearLayout>
+</RelativeLayout>
