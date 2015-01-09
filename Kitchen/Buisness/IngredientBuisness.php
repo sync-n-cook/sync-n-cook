@@ -12,7 +12,12 @@ class IngredientBuisness{
 
     public  function getIngredientJson(){
         $json =  new DecodeJson();
-        list($ingredientName,$ingredientQuantity) = $json->decodeIngredient("../frigo.json");
+        $conf = new Conf();
+          list($serveur,$port) = $conf->getConf("../../servConf.json");
+        
+        $url = 'http://'.$serveur[0].':'.$port[0].'/ProjetIntensif/webapi/ingredient/';
+      
+        list($ingredientName,$ingredientQuantity) = $json->decodeIngredient($url);
         unset($json);
         return array( $ingredientName, $ingredientQuantity);
     } 

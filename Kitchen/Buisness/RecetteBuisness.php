@@ -51,7 +51,7 @@ class RecetteBuisness{
        
        foreach($ingredientId as $id){
           
-           $url = 'http://'.$serveur[0].':'.$port[0].'/PI/webapi/recette/ingredient/'.$id;
+           $url = 'http://'.$serveur[0].':'.$port[0].'/ProjetIntensif/webapi/recette/ingredient/'.$id;
       
            list($Name,$Description,$recetteId) = $json->decodeRecette($url);
       

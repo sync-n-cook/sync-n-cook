@@ -18,15 +18,15 @@ foreach ($_GET as $nomchamp => $valeurchamp)
                             
 			}
 		}
-                                var_dump( $nom);
-			
-				var_dump( $valeur);
-                                if($nom[0]=="id0"){
-                                   
+                               
+                                if((isset($nom[0]))){
+                                    if($nom[0]=="id0"){
                                     $encode = new EncodeJson();
                                     $encode->setIngId($valeur, "../ingId.json");
                                      header('Location: ./Kitchen.html');
+                                     unset($encode);
                                      exit();
+                                    }
                                 }
 }
 
